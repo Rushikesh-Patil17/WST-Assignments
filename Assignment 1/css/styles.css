@@ -193,12 +193,12 @@ h1 {
 }
 
 .pathways-button:hover {
-  background-color: orange;
-  color: white;
+    background-color: orange;
+    color: white;
 }
 
 .pathways-button:hover .icons {
-  fill: white !important;
+    fill: white !important;
 }
 
 @media only screen and (max-width: 500px) {
