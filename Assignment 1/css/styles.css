@@ -153,3 +153,59 @@ h1 {
         display: none;
     }
 }
+
+.pathways {
+    text-align: center;
+}
+
+.pathways button {
+    max-width: 700px;
+    font-family: 'Roboto Mono', monospace;
+    min-height: 70px;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 22px;
+    background-color: #d0d0d5;
+    border-width: 2px;
+    border-color: #1b1b32;
+    color: #1b1b32;
+    border-radius: 0px;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    display: block;
+}
+
+.pathways {
+    text-align: center;
+}
+
+.pathways button:hover {
+    background-color: #0a0a23;
+    color: #fff;
+}
+
+.icons {
+    vertical-align: middle;
+}
+
+.pathways-button:hover {
+  background-color: orange;
+  color: white;
+}
+
+.pathways-button:hover .icons {
+  fill: white !important;
+}
+
+@media only screen and (max-width: 500px) {
+    .pathways button {
+        font-size: 1.2rem;
+        margin: 0 20px;
+        max-width: 450px;
+        margin: 0 1rem;
+    }
+}
