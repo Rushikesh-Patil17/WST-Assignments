@@ -9,4 +9,5 @@ You must have a complete LAMP stack installed i.e Apache2, PHP, MySQL.
 1. Clone the repository and move all project files to ```/var/www/html/assignment3``` (Make sure you only move all files and not directory).
 2. Start MySQL monitor and execute: 
 ```source /var/www/html/assignment3/script.sql;```
+3. Change your database username and password accordingly in ```connection.php```.
 3. Now navigate to http://localhost/assignment3/
