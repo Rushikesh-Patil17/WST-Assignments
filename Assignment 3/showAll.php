@@ -20,11 +20,10 @@
         return "
         <div class='card'>
             <div class='card-body'>
-                <b>Name: </b>$fname $lname<br />
-                <b>Username: </b>$username <br />
+                <span style='font-size: 1.3rem;'>$fname $lname</span><br />
+                <span style='color: grey;'>$username</span><br />
                 <b>Email: </b>$email </br>
-                <b>State: </b>$state <br />
-                <b>Country: </b>$country
+                $state, $country<br />
             </div>
         </div>
         ";
@@ -39,7 +38,7 @@
             $card = getInfoCard($row["firstname"], $row["lastname"], $row["username"], $row["email"], $row["state"], $row["country"]);
 
             echo "
-            <div class='mx-auto' style='width: 500px; margin-top: 50px;'>
+            <div class='mx-auto' style='max-width: 500px; margin-top: 30px;'>
                 $card
             </div>";
         }
