@@ -1,4 +1,4 @@
-# [Assignment 3]
+# Assignment 3
 This assignment has been implemented using HTML5, Bootstrap5, JS, PHP8 and MySQL.
 It takes various fields as input from user using a form and stores them in MySQL database. It also shows all the records stored on another page.
 
