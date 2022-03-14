@@ -49,7 +49,6 @@
 
 <body>
     <?php include 'navbar.php'; ?>
-        <div class='alert alert-danger' id='message'></div>
     <div class="mx-auto" style="max-width: 500px; margin-top: 20px;">
         <form action="#" method="post" onsubmit="return validateForm();">
             <!-- First Name -->
