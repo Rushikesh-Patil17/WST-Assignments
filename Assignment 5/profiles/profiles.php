@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" style="float: right;" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li>
-                    <a class="nav-link" href="#"><?php echo $_SESSION['username'] ?></a>
+                    <a class="nav-link" href="updateprofile.php"><?php echo $_SESSION['username'] ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>

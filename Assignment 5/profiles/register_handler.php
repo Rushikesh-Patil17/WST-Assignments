@@ -3,6 +3,7 @@
 
 // Include connection file
 require_once "connection.php";
+session_start();
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $email = "";

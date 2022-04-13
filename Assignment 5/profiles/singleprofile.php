@@ -47,7 +47,7 @@ require_once "connection.php";
         <div class="collapse navbar-collapse" style="float: right;" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li>
-                    <a class="nav-link" href="#"><?php echo $_SESSION['username'] ?></a>
+                    <a class="nav-link" href="updateprofile.php"><?php echo $_SESSION['username'] ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
@@ -64,17 +64,24 @@ require_once "connection.php";
 
     if ($result->num_rows >= 1) {
         while ($row = $result->fetch_assoc()) {
-            $upvotes = $row["upvotes"];
-            echo "<h2 id='vote'>$upvotes" . "</h2>";
-            echo "Username: " . $row['username'] . "<br>";
-            echo "Name: " . $row['name'] . "<br>";
-            echo "Phone: " . $row['phone'] . "<br>";
-            echo "Email: " . $row['email'] . "<br>";
-            echo "About: " . $row['about'] . "<br>";
-            echo "Address: " . $row['address'] . "<br>";
-            echo "Education: " . $row['education'] . "<br>";
-            echo "Skills: " . $row['skills'] . "<br>";
-            echo "Interests: " . $row['interests'] . "<br>";
+            echo "
+            <div class='mx-auto' style='max-width: 500px; margin-top: 20px;'>
+                <div class='card'>
+                <div class='card-header'><h2>" .
+                $row['name'] . "</h2><br><h4>" . $row['username'] . "</h4><br>" . "<span id='vote' style='font-size: 1.3rem; border: solid; padding: 10px; borderColor: grey;'>" . $row['upvotes'] . "</span><br />" .
+                "</div>
+                <ul class='list-group list-group-flush'>
+                <li class='list-group-item'><b>Email: </b>" . $row['email'] . "</li>
+                <li class='list-group-item'><b>Phone: </b>" . $row['phone'] . "</li>
+                <li class='list-group-item'><b>About: </b>" . $row['about'] . "</li>
+                <li class='list-group-item'><b>Address: </b>" . $row['address'] . "</li>
+                <li class='list-group-item'><b>Education: </b>" . $row['education'] . "</li>
+                <li class='list-group-item'><b>Skills: </b>" . $row['skills'] . "</li>
+                <li class='list-group-item'><b>Interests: </b>" . $row['interests'] . "</li>
+                </ul>
+                </div>
+            </div>
+            ";
         }
     } else {
         echo "<h2>No profile found!</h2>";

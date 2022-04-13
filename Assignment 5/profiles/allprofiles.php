@@ -16,10 +16,10 @@ function getInfoCard($name, $username, $upvotes)
     return "
     <div class='card'>
         <div class='card-body'>
-            <span style='font-size: 1.3rem; border: solid; padding: 10px; borderColor: grey;'>$upvotes</span><br />
             <div style='margin-bottom: 20px;'></div>
             <span style='font-size: 1.3rem;'>$name</span><br />
-            <span style='color: grey;'>$username</span><br />
+            <p style='color: grey; margin-bottom: 10px;'>$username</p><br />
+            <span style='font-size: 1.3rem; border: solid; padding: 10px; borderColor: grey;'>$upvotes</span><br />
             <div style='margin-top: 20px;'></div>
             <input type='submit' class='btn btn-primary' name='$username' value='Visit Profile'>
         </div>
