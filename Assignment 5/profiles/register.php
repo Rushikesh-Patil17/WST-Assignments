@@ -13,11 +13,13 @@
 <body>
     <div class="mx-auto" style="max-width: 500px; margin-top: 20px;">
         <h2>Sign Up</h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" name="name" class="form-control">
             </div>
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
             <div class="form-group">
                 <label>Email</label>
                 <input type="email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">

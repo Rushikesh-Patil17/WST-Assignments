@@ -11,10 +11,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 }
 
 // get all profiles sorted by upvotes and render
-function getInfoCard($name, $username, $upvotes)
+function getInfoCard($name, $username, $upvotes, $img)
 {
     return "
     <div class='card'>
+    <div style='text-align: center;'>
+    <img src='$img' class='card-img-top' alt='...' style='width: 100px;'>
+    </div>
         <div class='card-body'>
             <div style='margin-bottom: 20px;'></div>
             <span style='font-size: 1.3rem;'>$name</span><br />
@@ -38,7 +41,7 @@ if ($result->num_rows - 1 > 0) {
         if ($usr === $_SESSION['username'])
             continue;
         echo "<form method='post' action='singleprofile.php?user=$usr'>";
-        $card = getInfoCard($row["name"], $row["username"], $row["upvotes"]);
+        $card = getInfoCard($row["name"], $row["username"], $row["upvotes"], "images/" . $row['profile_pic']);
         echo "
         <div class='mx-auto' style='max-width: 500px; margin-top: 30px;'>
             $card

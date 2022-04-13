@@ -31,7 +31,7 @@ $mysqli->close();
 
 <head>
     <meta charset="UTF-8">
-    <title>Update Profile</title>
+    <title>Update Profile for <?php $_SESSION['username']?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>

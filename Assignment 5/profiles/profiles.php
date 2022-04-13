@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         body {
-            font: 14px sans-serif;
             text-align: center;
         }
     </style>
@@ -36,6 +35,7 @@
         </div>
     </nav>
     <?php require "allprofiles.php"; ?>
+    <div style="margin: 100px"></div>
 </body>
 
 </html>

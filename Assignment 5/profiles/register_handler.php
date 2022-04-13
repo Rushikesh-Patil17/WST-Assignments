@@ -102,6 +102,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    $msg = "";
+
+    $filename = $_FILES["fileToUpload"]["name"];
+    $tempname = $_FILES["fileToUpload"]["tmp_name"];
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+    $folder = "images/" . $_POST["username"] . "." . $extension;
+    
+    // Now let's move the uploaded image into the folder: image
+    if (move_uploaded_file($tempname, $folder)) {
+        $msg = "Image uploaded successfully";
+    } else {
+        $msg = "Failed to upload image";
+    }
+
     // Check input errors before inserting in database
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
         // Prepare an insert statement
@@ -117,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_username = $_POST["username"];
             $param_email = $_POST["email"];
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            $param_profile_pic = $_POST["profile_pic"];
+            $param_profile_pic = $_POST["username"] . "." . $extension;
             $param_about = $_POST["about"];
             $param_address = $_POST["address"];
             $param_education = $_POST["education"];
@@ -127,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 // Redirect to login page
-                header("location: index.php");
+                //header("location: index.php");
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }

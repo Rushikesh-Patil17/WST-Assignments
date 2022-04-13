@@ -19,7 +19,7 @@ require_once "connection.php";
 
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Profile for <?php echo $_SESSION['username']?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -31,7 +31,6 @@ require_once "connection.php";
     </script>
     <style>
         body {
-            font: 14px sans-serif;
             text-align: center;
         }
     </style>
@@ -67,6 +66,9 @@ require_once "connection.php";
             echo "
             <div class='mx-auto' style='max-width: 500px; margin-top: 20px;'>
                 <div class='card'>
+                <div style='text-align: center;'>
+                <img src='images/" . $row['profile_pic'] . "' class='card-img-top' alt='...' style='width: 100px;'>
+                </div>
                 <div class='card-header'><h2>" .
                 $row['name'] . "</h2><br><h4>" . $row['username'] . "</h4><br>" . "<span id='vote' style='font-size: 1.3rem; border: solid; padding: 10px; borderColor: grey;'>" . $row['upvotes'] . "</span><br />" .
                 "</div>
@@ -94,6 +96,7 @@ require_once "connection.php";
     <div style="margin-top: 40px;"></div>
     <input id="upvote" type='button' class='btn btn-primary' value='Upvote'>
     <input id="downvote" type='button' class='btn btn-primary' value='Downvote'>
+    <div style="margin-bottom: 20px;"></div>
 
 </body>
 <script type="text/javascript">
